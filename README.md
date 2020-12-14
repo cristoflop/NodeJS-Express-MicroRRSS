@@ -2,8 +2,8 @@
 ### Aplicacion web realizada con nodejs, expressjs, y plantillas ejs
 
 ## Autores
-    - Sergio Manzanaro Caraballo
-    - Cristofer López Cabañas
+   - Sergio Manzanaro Caraballo
+   - Cristofer López Cabañas, [@cristoflop](https://github.com/cristoflop)
 
 ---
 
