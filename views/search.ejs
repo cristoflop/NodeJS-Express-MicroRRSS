@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/buscarUsuarios.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>Resultados de la busqueda: <span id="busqueda"><%= busqueda %></span></h1>
+            <ul class="listaResultados">
+                <% if(users.length == 0) { %>
+                    <span>Ningun resultado coincide con la busqueda</span>
+                    <% } %>
+                        <% users.forEach(element => { %>
+                            <li>
+                                <div class="usuario">
+                                    <% if(element.img) { %>
+                                        <img src="/imagen/<%=element.img%>">
+                                        <% } %>
+                                            <% if(!element.img) { %>
+                                                <img src="img/Usuario.png">
+                                                <% } %>
+                                                    <div class="enlace">
+                                                        <a href="/perfil/<%= element.id %>">
+                                                            <%= element.name %>
+                                                        </a>
+                                                    </div>
+                                </div>
+                                <% if(!element.estado) { %>
+                                    <a href="/solicitar/<%= element.id %>">Solicitar amistad</a>
+                                    <% } %>
+                                        <% if(element.estado && element.estado == "aceptado") { %>
+                                            <span>Ya sois amigos</span>
+                                            <% } %>
+                                                <% if(element.estado && element.estado == "pendiente") { %>
+                                                    <span>Solicitado</span>
+                                                    <% } %>
+                            </li>
+                            <% }); %>
+            </ul>
+
+        </main>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+.imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.imagen>img {
+    border: 0.1vw solid black;
+    height: 6vw;
+    width: 6vw;
+    padding: 0.5vw;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contestarPregunta {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5vw;
+}
+
+.contestarPregunta>a {
+    width: 6vw;
+    margin-bottom: 2%;
+    background-color: #ad7e25;
+    color: white;
+    border-radius: 1vw;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+    width: 30%;
+}
+
+.contestarPregunta>a:hover {
+    background-color: #866018;
+}
+
+.respondido {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0.5vw;
+}
+
+.respondido>ul {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.respondido>ul>li {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 8vw;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2%;
+}
+
+.adivinar {
+    width: 25%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.adivinar>form {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.adivinar>form>input[type="submit"] {
+    font-family: 'Baloo';
+    width: 50%;
+    margin-left: 3%;
+    background-color: #ad7e25;
+    color: white;
+    border-radius: 1.2vw;
+    padding: 3%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.adivinar>form>input[type="submit"]:hover {
+    background-color: #866018;
+}
+
+.acertar {
+    width: 25%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: green;
+    font-size: 1.2vw;
+}
+
+.fallar {
+    width: 25%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: red;
+    font-size: 1.2vw;
+}
+
+#parrafo {
+    width: 100%;
+    display: flex;
+    font-size: 1.4vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.enlace {
+    width: 50%;
+}
+
+.enlace>a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    font-size: 1.8vw;
+    text-transform: capitalize;
+}

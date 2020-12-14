@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/creaPreguntas.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <% if(errorMsg) { %>
+                <span id="errorEnRojo"><%= errorMsg %></span>
+                <% } %>
+                    <h1>Crea una pregunta</h1>
+                    <div class="preguntaF ">
+
+                        <form action="crearPregunta" method="POST">
+                            <div class="formul">
+                                <label for="textoPregunta">Pregunta</label>
+                                <input type="text" name="textoPregunta" placeholder="pregunta" id="txt_pregunta" required>
+                            </div>
+                            <h2 id="separador">Posibles respuestas:</h2>
+                            <div class="formul">
+                                <label for="textoRespuestaUno">Respuesta 1</label>
+                                <input type="text" name="textoRespuestaUno" placeholder="respuesta" id="txt_pregunta" required>
+                            </div>
+                            <div class="formul">
+                                <label for="textoRespuestaDos">Respuesta 2</label>
+                                <input type="text" name="textoRespuestaDos" placeholder="respuesta" id="txt_pregunta" required>
+                            </div>
+                            <div class="formul">
+                                <label for="textoRespuestaTres">Respuesta 3</label>
+                                <input type="text" name="textoRespuestaTres" placeholder="respuesta" id="txt_pregunta">
+                            </div>
+                            <div class="formul">
+                                <label for="textoRespuestaCuatro">Respuesta 4</label>
+                                <input type="text" name="textoRespuestaCuatro" placeholder="respuesta" id="txt_pregunta">
+                            </div>
+                            <div class="boton_formul">
+                                <input type="submit" value="Crear">
+                            </div>
+                        </form>
+                    </div>
+        </main>
+</body>
+
+</html>

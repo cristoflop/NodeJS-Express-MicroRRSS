@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/responderPregAmigo.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>
+                <%=pregunta.textoP%>
+            </h1>
+            <% if(errorMsg) { %>
+                <span id="errorEnRojo"><%= errorMsg %></span>
+                <% } %>
+                    <form class="respondido" action="/pregunta/contestadaporotro" method="POST">
+                        <ul>
+                            <% respuestas.forEach(element => { %>
+                                <li>
+                                    <input type="radio" name="respuesta" value="<%=element%>">
+                                    <span><%=element%></span>
+                                </li>
+                                <% }) %>
+                        </ul>
+                        <input type="hidden" name="idPreg" value="<%= pregunta.id %>">
+                        <input type="hidden" name="userId" value="<%= userId %>">
+                        <input type="hidden" name="listaRespuestas" value="<%= respuestas %>">
+                        <input type="hidden" name="textoP" value="<%= pregunta.textoP %>">
+                        <div class="responderBT">
+                            <input id="responder" type="submit" value="Responder">
+                        </div>
+                    </form>
+        </main>
+</body>
+
+</html>

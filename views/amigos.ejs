@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/amigos.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>Solicitudes de amistad</h1>
+            <div class="solicitudesDeAmistad">
+                <ul>
+                    <% if(pendientes.length == 0) { %>
+                        <span>No tienes solicitudes pendientes</span>
+                        <% } %>
+                            <% pendientes.forEach(element => { %>
+                                <li>
+                                    <div class="imagen">
+                                        <% if(element.img) { %>
+                                            <img src="/imagen/<%=element.img%>">
+                                            <% } %>
+                                                <% if(!element.img) { %>
+                                                    <img src="img/Usuario.png">
+                                                    <% } %>
+                                    </div>
+                                    <div class="enlace">
+                                        <a href="/perfil/<%= element.id %>">
+                                            <%= element.full_name %>
+                                        </a>
+                                    </div>
+                                    <div class="aceptarYrechazar">
+                                        <a href="/aceptar/<%= element.id %>">Aceptar</a>
+                                        <a href="/rechazar/<%= element.id %>">Rechazar</a>
+                                    </div>
+                                </li>
+                                <% }); %>
+                </ul>
+            </div>
+
+            <h1>Búsqueda de amigos</h1>
+            <form action="search" method="POST" class="formulario">
+                <div class="formul">
+                    <input type="text" value="" name="nombre" placeholder="Introduzca un nombre">
+                    <input type="submit" id="buscar" value="BUSCAR" />
+                </div>
+            </form>
+
+            <h1>Mis amigos</h1>
+            <div class="solicitudesDeAmistad">
+                <ul>
+                    <% if(amigos.length == 0) { %>
+                        <span>Aun no tienes amigos agregados</span>
+                        <% } %>
+                            <% amigos.forEach(element => { %>
+                                <li>
+                                    <div class="imagen">
+                                        <% if(element.img) { %>
+                                            <img src="/imagen/<%=element.img%>">
+                                            <% } %>
+                                                <% if(!element.img) { %>
+                                                    <img src="img/Usuario.png">
+                                                    <% } %>
+                                    </div>
+                                    <div class="enlace">
+                                        <a href="/perfil/<%= element.id %>">
+                                            <%= element.full_name %>
+                                        </a>
+                                    </div>
+                                </li>
+                                <% }); %>
+                </ul>
+            </div>
+        </main>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/responderPregYoMismo.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>
+                <%=pregunta%>
+            </h1>
+            <% if(errorMsg) { %>
+                <span id="errorEnRojo"><%= errorMsg %></span>
+                <% } %>
+                    <form class="respondido" action="/pregunta/contestaryo/<%= id %>" method="POST">
+                        <ul>
+                            <% respuestas.forEach(element => { %>
+                                <li>
+                                    <input type="radio" name="opcion" value="<%= element %>">
+                                    <span><%= element %></span>
+                                </li>
+                                <% }); %>
+                                    <li class="otro">
+                                        <input type="radio" name="opcion" value="otro" checked>
+                                        <span>Otro</span>
+                                        <input type="text" name="respuestaPropia" placeholder="escribe...">
+                                    </li>
+                        </ul>
+                        <input type="hidden" name="listaRespuestas" value="<%= respuestas %>">
+                        <input type="hidden" name="tituloPregunta" value="<%= pregunta %>">
+                        <input type="hidden" name="idP" value="<%= id %>">
+                        <div class="responderBT">
+                            <input id="responder" type="submit" value="Responder">
+                        </div>
+                    </form>
+        </main>
+</body>
+
+</html>

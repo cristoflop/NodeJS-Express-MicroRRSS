@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/login.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header2") %>
+        <main>
+            <h1>Entrar</h1>
+            <form action="login" method="POST">
+                <div class="loginF">
+
+                    <div class="formul">
+                        <label for="name">Direccion de correo</label>
+                        <input type="text" name="name" placeholder="correo" id="txt_name">
+                    </div>
+                    <div class="formul">
+                        <label for="pass">Contraseña</label>
+                        <input type="password" value="" name="pass" placeholder="contraseña">
+                    </div>
+                    <div class="boton_formul">
+                        <input type="submit" value="inicia sesión">
+                    </div>
+
+                </div>
+            </form>
+            <% if(errorMsg) { %>
+                <strong id="errorEnRojo"><%= errorMsg %></strong>
+                <% } %>
+        </main>
+</body>
+
+</html>

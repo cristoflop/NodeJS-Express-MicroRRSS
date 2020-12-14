@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/preguntaContestar.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>
+                <%= texto %>
+            </h1>
+
+            <% if(!respondida) { %>
+                <div class="contestarPregunta">
+                    <p id="parrafo">No has contestado a esta pregunta.</p>
+                    <a href="/pregunta/contestaryo/<%= id %>">Contestar pregunta</a>
+                </div>
+                <% } else { %>
+                    <div class="contestarPregunta">
+                        <p id="parrafo">Ya has contestado a esta pregunta.</p>
+                    </div>
+                    <% } %>
+
+                        <div class="respondido">
+                            <% if(amigos.length == 0) { %>
+                                <p id="parrafo">Ningun amigo tuyo ha respondido esta pregunta</p>
+                                <% } else { %>
+                                    <p id="parrafo">Los siguientes amigos han contestado a esta pregunta:</p>
+                                    <ul>
+                                        <% amigos.forEach(element => { %>
+                                            <li>
+                                                <div class="imagen">
+                                                    <% if(element.img) { %>
+                                                        <img src="/imagen/<%=element.img%>">
+                                                        <% } %>
+                                                            <% if(!element.img) { %>
+                                                                <img src="/img/Usuario.png">
+                                                                <% } %>
+                                                </div>
+                                                <div class="enlace">
+                                                    <a href="/perfil/<%= element.id %>">
+                                                        <%= element.full_name %>
+                                                    </a>
+                                                </div>
+                                                <% if(element.resultado) { %>
+                                                    <% if(element.resultado == "acierto") { %>
+                                                        <div class="acertar">
+                                                            <span>Has acertado</span>
+                                                        </div>
+                                                        <% } %>
+                                                            <% if(element.resultado == "fallo") { %>
+                                                                <div class="fallar">
+                                                                    <span>Has fallado</span>
+                                                                </div>
+                                                                <% } %>
+                                                                    <% } else { %>
+                                                                        <div class="adivinar">
+                                                                            <form action="/pregunta/contestarporotro" method="POST">
+                                                                                <input type="hidden" name="idPreg" value="<%= id %>">
+                                                                                <input type="hidden" name="idUser" value="<%= element.id %>">
+                                                                                <input type="submit" value="Adivinar">
+                                                                            </form>
+                                                                        </div>
+                                                                        <% } %>
+                                            </li>
+                                            <% }); %>
+                                    </ul>
+                                    <% } %>
+                        </div>
+        </main>
+</body>
+
+</html>

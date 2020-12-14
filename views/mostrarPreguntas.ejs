@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/pregAleat.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>Preguntas seleccionadas aleatoriamente</h1>
+            <ul class="listaResultados">
+                <% if(preguntas.length == 0){ %>
+                    <li>
+                        <span>No hay preguntas disponibles</span>
+                    </li>
+                    <% } %>
+                        <% preguntas.forEach(element => { %>
+                            <li>
+                                <a href="/pregunta/<%=element.id%>">
+                                    <%= element.texto %>
+                                </a>
+                            </li>
+                            <% }); %>
+            </ul>
+            <h1 id="nuevaPreg">¡Añade tus preguntas!</h1>
+            <a id="nuevaPregBT" href="/crearPregunta">Crear una pregunta</a>
+        </main>
+</body>
+
+</html>

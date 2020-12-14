@@ -1,0 +1,131 @@
+.formulario {
+    width: 100%;
+}
+
+.formul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.formul>input[type="text"] {
+    color: #454545;
+    border: 0.1px solid #AAA;
+    border-radius: 0.5vw;
+    width: 40%;
+    font-size: 1vw;
+    padding: 0.5%;
+    font-family: 'Baloo', cursive;
+    outline: none;
+    margin-right: 3%;
+}
+
+.solicitudesDeAmistad {
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5vw;
+    margin-bottom: 5%;
+}
+
+.solicitudesDeAmistad>ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.solicitudesDeAmistad>ul>span {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6vw;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.solicitudesDeAmistad>ul>li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 8vw;
+}
+
+.enlace {
+    width: 55%;
+}
+
+.enlace>a {
+    font-size: 2vw;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+}
+
+.imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.imagen>img {
+    border: 0.1vw solid black;
+    height: 6vw;
+    width: 6vw;
+    padding: 0.5vw;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.aceptarYrechazar {
+    width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.aceptarYrechazar>a {
+    width: 6vw;
+    margin-left: 3%;
+    background-color: #ad7e25;
+    color: white;
+    border-radius: 1.2vw;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+}
+
+.aceptarYrechazar>a:hover {
+    background-color: #866018;
+}
+
+#buscar {
+    font-family: 'Baloo', cursive;
+    padding: 1%;
+    background-color: #ad7e25;
+    color: white;
+    border-radius: 1.2vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+#buscar:hover {
+    background-color: #866018;
+}

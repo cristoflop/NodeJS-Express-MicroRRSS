@@ -1,0 +1,71 @@
+.preguntaF {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5%;
+    font-size: 1.3vw;
+    width: 60%;
+}
+
+.formul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 5%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.boton_formul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton_formul>input[type="submit"] {
+    width: 30%;
+    text-decoration: none;
+    background-color: #ad7e25;
+    color: white;
+    border-radius: 1.4vw;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.3vw;
+    transition: all 0.4s ease;
+    font-family: 'Baloo', cursive;
+    cursor: pointer;
+    text-transform: capitalize;
+    outline: none;
+}
+
+.boton_formul>input[type="submit"]:hover {
+    background-color: #866018;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.5vw;
+    text-align: left;
+    width: 30%;
+}
+
+input[type="text"] {
+    color: #454545;
+    border: 0.1vw solid #AAA;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    padding-left: 3%;
+    font-family: 'Baloo', cursive;
+    outline: none;
+    width: 70%;
+}
+
+#separador {
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}

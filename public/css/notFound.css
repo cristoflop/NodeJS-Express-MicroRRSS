@@ -1,0 +1,73 @@
+.texto_error {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.imagen {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen>img {
+    height: 18vw;
+    width: 18vw;
+    margin-left: 3%;
+    border-radius: 50%;
+}
+
+.mensaje {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.mensaje>span {
+    font-size: 1.5vw;
+}
+
+.volver_inicio {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.volver_inicio>a {
+    font-family: 'Baloo';
+    background-color: #ad7e25;
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+    padding: 1%;
+    border-radius: 2vw;
+    text-decoration: none;
+    outline: none;
+    /* para que el recuadro que aparece al pulsar no salga */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    /* efecto de cambio al posar el raton encima */
+}
+
+.volver_inicio>a:hover {
+    /*lineas para reescalar con efecto*/
+    /*-webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);*/
+    /*box-shadow: inset 0 0 0 3px transparent;*/
+    /* efecto de sombra hacia adentro */
+    background-color: #866018;
+}

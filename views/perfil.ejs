@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/perfil.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header") %>
+        <main>
+            <h1>Perfil</h1>
+            <div class="perfil">
+                <div class="imagen">
+                    <% if(img) { %>
+                        <img src="/imagen/<%=img%>">
+                        <% } %>
+                            <% if(!img) { %>
+                                <img src="/img/Usuario.png">
+                                <% } %>
+                </div>
+                <div class="datos">
+                    <label><%= full_name %></label>
+                    <% if(nacimiento !== null) { %>
+                        <label><%= nacimiento %></label>
+                        <% } %>
+                            <label><%= sexo %></label>
+                            <label><%= points %> puntos</label>
+                </div>
+            </div>
+            <% if(logeadoId === otroUserId) { %>
+                <a id="modifBT" href="modificarPerfil">Modifica tu perfil</a>
+                <% if(errorMsg) { %>
+                    <strong id="errorEnRojo"><%= errorMsg %></strong>
+                    <% } %>
+
+
+                        <h1 class="textoTitulo">Notificaciones</h1>
+                        <% if(notifs.length == 0) { %>
+                            <div class="textoSinNotificaciones">
+                                <span>No tienes notificaciones</span>
+                            </div>
+                            <% } else { %>
+                                <ul class="notificaciones">
+                                    <% notifs.forEach(x =>{ %>
+                                        <li>
+                                            <span>
+                                                <a href="/perfil/<%= x.id %>"><%= x.full_name %></a> ha respondido "<%= x.respOtro %>" a la pregunta <br>
+                                                "<%= x.textoPreg %>" <br>
+                                                Tu habias respondido "<%= x.respYo %>", resultado "<%= x.resultado %>"
+                                            </span>
+                                            <form action="/eliminaNotif" method="POST">
+                                                <input type="hidden" name="propietario" value="<%= logeadoId %>">
+                                                <input type="hidden" name="responde_por" value="<%= x.id %>">
+                                                <input type="hidden" name="pregunta" value="<%= x.pregunta %>">
+                                                <input type="submit" value="Visto">
+                                            </form>
+                                        </li>
+                                        <% }); %>
+                                </ul>
+                                <% } %>
+
+                                    <h1 class="textoTitulo">¡Sube una foto!</h1>
+                                    <form class="subeImagen" action="subirFoto" method="POST" enctype="multipart/form-data">
+                                        <div class="formul">
+                                            <label for="pic">Imagen</label>
+                                            <input type="file" name="pic" accept="image/png" required/>
+                                        </div>
+                                        <div class="formul">
+                                            <label for="descripcion">Descripcion</label>
+                                            <input type="text" name="descripcion" placeholder="descripcion" id="descripcion" required>
+                                        </div>
+                                        <div class="boton_formul">
+                                            <input type="hidden" name="full_name" value="<%= full_name %>">
+                                            <input type="hidden" name="otroUserId" value="<%= otroUserId%>">
+                                            <input type="hidden" name="sexo" value="<%= sexo %>">
+                                            <input type="hidden" name="nacimiento" value="<%= nacimiento %>">
+                                            <input type="hidden" name="imagenes" value="<%= imagenes %>">
+                                            <input type="hidden" name="descripciones" value="<%= descripciones %>">
+                                            <input type="submit" value="subir foto">
+                                        </div>
+                                    </form>
+                                    <% } %>
+                                        <h1 class="textoTitulo">Fotos subidas</h1>
+                                        <div class="fotosSubidas">
+                                            <% if(imagenes.length == 0) { %>
+                                                <% if(logeadoId === otroUserId) { %>
+                                                    <span id="textoSinFotos">No has subido ninguna foto aun</span>
+                                                    <% } else { %>
+                                                        <span id="textoSinFotos"><%= full_name %> aun no ha subido ninguna foto</span>
+                                                        <% } %>
+                                                            <% } %>
+                                                                <ul class="foto">
+                                                                    <% imagenes.forEach((element, i) => { %>
+                                                                        <li>
+                                                                            <div class="imagen2">
+                                                                                <img src="/imagen/<%=element%>">
+                                                                            </div>
+                                                                            <div class="datos2">
+                                                                                <label><%= descripciones[i]%></label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <% }) %>
+                                                                </ul>
+                                        </div>
+
+        </main>
+</body>
+
+</html>

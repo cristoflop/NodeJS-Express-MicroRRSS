@@ -1,0 +1,19 @@
+<header>
+    <section class="titulo">
+        <h1>Face
+            <div id="letraB">b</div>luff</h1>
+    </section>
+    <section class="enlaces">
+        <a href="/perfil">perfil</a>
+        <a href="/amigos">amigos</a>
+        <a href="/preguntas">preguntas</a>
+        <a href="/logout">Desconectar</a>
+        <% if(img) { %>
+            <img class="imagenCabecera" src="/imagen/<%=img%>">
+            <% } %>
+                <% if(!img) { %>
+                    <img class="imagenCabecera" src="/img/Usuario.png">
+                    <% } %>
+                        <span> <%= points %> puntos</span>
+    </section>
+</header>

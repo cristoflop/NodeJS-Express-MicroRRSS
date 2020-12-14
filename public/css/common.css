@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    background-attachment: fixed;
+    /* deja el fondo de pantalla fijo cuando haces scroll*/
+    width: 100%;
+    font-family: 'Baloo', cursive;
+    color: black;
+    background-size: cover;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: initial;
+    height: 10em;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    max-height: 20%;
+    min-height: 15%;
+    color: white;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo > h1 {
+    font-size: 4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#letraB {
+    margin-right: 3%;
+    margin-left: 3%;
+    text-transform: uppercase;
+    transform: scaleX(-1.5);
+    font-family: 'Liu Jian Mao Cao', cursive;
+}
+
+.enlaces {
+    display: flex;
+    padding-left: 10%;
+}
+
+.enlaces > a {
+    margin-right: 4%;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: lightseagreen;
+    transition: all 0.4s ease;
+}
+
+.enlaces > a:hover {
+    color: brown;
+}
+
+.imagenCabecera {
+    /*Div contenido en el div principal que contiene la foto*/
+    margin-right: 1%;
+    height: 1.4vw;
+    width: 1.4vw;
+}
+
+main {
+    margin-top: 12vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    color: white;
+    font-size: 1vw;
+}
+
+#errorEnRojo {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    color: rgb(143, 5, 5);
+    font-size: 2vw;
+}

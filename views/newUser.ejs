@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>FaceBluff</title>
+    <link rel="stylesheet" href="/css/newUser.css" media="screen">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css" media="screen">
+</head>
+
+<body>
+    <%- include("header2") %>
+        <main>
+            <h1>Nuevo Usuario</h1>
+            <form action="registrar" method="POST" enctype="multipart/form-data">
+                <div class="loginF">
+
+                    <div class="formul">
+                        <label for="name">Email</label>
+                        <input type="text" name="name" placeholder="correo" id="txt_name" required>
+                    </div>
+                    <div class="formul">
+                        <label for="pass">Contraseña</label>
+                        <input type="password" name="pass" placeholder="contraseña" required>
+                    </div>
+                    <div class="formul">
+                        <label for="full_name">Nombre completo</label>
+                        <input type="text" name="full_name" placeholder="nombre completo" required>
+                    </div>
+                    <div class="formul">
+                        <label for="sexo">Sexo</label>
+                        <input type="radio" name="sexo" value="masculino" checked> <span>Hombre</span>
+                        <input type="radio" name="sexo" value="femenino"> <span>Mujer</span>
+                        <input type="radio" name="sexo" value="otro"> <span>Otro</span>
+                    </div>
+                    <div class="formul">
+                        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                        <div id="divDate">
+                            <input type="date" name="fecha_nacimiento">
+                        </div>
+                    </div>
+                    <div class="formul">
+                        <label for="pic">imagen de perfil</label>
+                        <input type="file" name="pic" accept="image/png" />
+                    </div>
+                    <div class="boton_formul">
+                        <input type="submit" value="registrarse">
+                    </div>
+
+                </div>
+            </form>
+            <% if(errorMsg) { %>
+                <strong id="errorEnRojo"><%= errorMsg %></strong>
+                <% } %>
+        </main>
+</body>
+
+</html>
