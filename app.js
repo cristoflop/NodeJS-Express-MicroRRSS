@@ -48,12 +48,11 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(ficherosEstaticos))
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 
 /*******************************************************************************************************************/
-
 
 app.use("/", loginregisterRouter);
 app.use("/", usuarioRouter);
@@ -89,10 +88,10 @@ function middlewareServerError(error, request, response, next) {
 
 
 // Arranque del servior (listen)
-app.listen(config.port, function(err) {
+app.listen(config.port, function (err) {
     if (err) {
-        console.error("No se pudo inicializar el servidor: " + err.message);
+        console.error(`No se pudo inicializar el servidor: ${err.message}`);
     } else {
-        console.log("Servidor arrancado en el puerto " + config.port);
+        console.log(`Servidor arrancado en el puerto ${config.port}`);
     }
 });
