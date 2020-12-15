@@ -28,13 +28,6 @@ const sessionStore = new MySQLStore({
     database: config.mysqlConfig.database
 });
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
-app.use(express.static(ficherosEstaticos))
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
 const middlewareSession = session({
     saveUninitialized: false,
     secret: "foobar34",
